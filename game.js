@@ -10,6 +10,7 @@
     this.asteroids = [];
     this.ship = new Asteroids.Ship([DIM_X/2, DIM_Y/2], [0, 0]);
     this.bullets = [];
+    this.score = 0;
   };
 
   var randomVec = function(x, y) {
@@ -70,7 +71,7 @@
 
     this.asteroids.forEach(function(asteroid) {
       if(asteroid.isCollidedWith(that.ship)) {
-        alert("You've crashed your ship!");
+        alert("You've crashed your ship! FINAL SCORE: " + that.score);
         that.stop(interval);
         window.location.reload();
       }
@@ -78,7 +79,7 @@
   };
 
   Game.prototype.stop = function(interval) {
-    window.clearInterval(interval)
+    window.clearInterval(interval);
   };
 
   Game.prototype.move = function() {
@@ -111,6 +112,7 @@
 
     if(this.hitBullets(asteroid)) {
       this.asteroids.splice(ind, 1);
+      this.score += 1;
     } else if(this.isOutOfBounds(asteroid)) {
 			if(cx < 0) { asteroid.pos[0] = DIM_X; }
 			else if (cx > DIM_X) { asteroid.pos[0] = 0; }
@@ -157,7 +159,7 @@
 		
     this.asteroids.forEach(function(asteroid) {
       if(asteroid.isCollidedWith(bullet)) {
-        hit =  true;
+        hit = true;
       }
     })
     return hit

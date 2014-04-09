@@ -15,8 +15,8 @@
   <body>
     <center>
       <h1>Asteroids.js</h1>
-      <strong>INSTRUCTIONS</strong>: Move using arrow keys. Spacebar to shoot bullets. Avoid running into asteroids!
-      <br>
+      <strong>INSTRUCTIONS</strong>: Move using arrow keys. Spacebar to shoot bullets.
+      <br>The game ends when you crash into an asteroid, and lets you know how many asteroids you were able to destroy before crashing your ship.
 
       <canvas width="1000" height="600" style="background-color:transparent;"></canvas>
       <script src="inherits.js"></script>
