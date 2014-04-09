@@ -1,8 +1,8 @@
 (function(root) {
   var Asteroids = root.Asteroids = ( root.Asteroids || {} );
 
-  var RADIUS = 15;
-  var COLOR = "green";
+  var RADIUS = 11;
+  var COLOR = "#2E518F";
 
   var Ship = Asteroids.Ship = function(pos, vel) {
     Asteroids.MovingObject.call(this, pos, vel, RADIUS, COLOR);

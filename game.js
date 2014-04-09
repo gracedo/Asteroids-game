@@ -3,7 +3,7 @@
 	
   var FPS = 30;
   var DIM_X = 1000;
-  var DIM_Y = 900;
+  var DIM_Y = 600;
 
   var Game = Asteroids.Game = function(ctx) {
     this.ctx = ctx;
@@ -72,6 +72,7 @@
       if(asteroid.isCollidedWith(that.ship)) {
         alert("You've crashed your ship!");
         that.stop(interval);
+        window.location.reload();
       }
     })
   };
@@ -187,6 +188,9 @@
     this.checkShip();
     this.draw();
     this.checkCollisions(interval);
+    if(this.asteroids.length < 5) {
+      this.addAsteroids(5);
+    }
   };
 
   Game.prototype.start = function() {
